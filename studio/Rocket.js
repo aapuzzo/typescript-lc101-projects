@@ -17,13 +17,15 @@ var Rocket = /** @class */ (function () {
         }
         return sum;
     };
-    //mass of astronaut and their cargo?
+    //mass of astronaut and their cargo
     Rocket.prototype.currentMassKg = function () {
         return this.sumMass(this.astronauts) + this.sumMass(this.cargoItems);
     };
+    //checks if weight is below maximum
     Rocket.prototype.canAdd = function (item) {
         return this.currentMassKg() + item.massKg <= this.totalCapacityKg;
     };
+    //checks canAdd function to verify and add if true, else returns false
     Rocket.prototype.addCargo = function (cargo) {
         if (this.canAdd(cargo)) {
             this.cargoItems.push(cargo);
@@ -33,6 +35,7 @@ var Rocket = /** @class */ (function () {
             return false;
         }
     };
+    //adds another astronaut if true, else returns false
     Rocket.prototype.addAstronaut = function (astronaut) {
         if (this.canAdd(astronaut)) {
             this.astronauts.push(astronaut);
