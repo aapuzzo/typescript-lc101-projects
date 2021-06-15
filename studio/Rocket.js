@@ -31,9 +31,7 @@ var Rocket = /** @class */ (function () {
             this.cargoItems.push(cargo);
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
     };
     //adds another astronaut if true, else returns false
     Rocket.prototype.addAstronaut = function (astronaut) {
@@ -41,9 +39,7 @@ var Rocket = /** @class */ (function () {
             this.astronauts.push(astronaut);
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
     };
     return Rocket;
 }());

@@ -2,12 +2,11 @@ import { Payload } from './Payload';
 import { Cargo } from './Cargo';
 import { Astronaut } from './Astronaut';
 
-export class Rocket implements Payload {
+export class Rocket{
     name: string;
     totalCapacityKg: number;
     cargoItems: Cargo[] = [];
-    astronauts: Astronaut[] = [];
-    massKg: number;
+    astronauts: Astronaut[] = [];  
 
     //constructor
     constructor(name: string, totalCapacityKg:  number) {
@@ -37,9 +36,7 @@ export class Rocket implements Payload {
             this.cargoItems.push(cargo);
             return true;
         }
-        else {
-            return false;
-        }
+        return false;        
     }
     //adds another astronaut if true, else returns false
     addAstronaut(astronaut: Astronaut): boolean {
@@ -47,9 +44,7 @@ export class Rocket implements Payload {
             this.astronauts.push(astronaut);
             return true;
         }
-        else {
-            return false;
-        }
+        return false;        
     }
 
 }
